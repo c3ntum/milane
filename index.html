@@ -13,14 +13,18 @@
 
   <style>
     body {
-      background-color: #000;
+      background: radial-gradient(circle at top, #111 0%, #000 80%);
       color: #fff;
       font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     /* Navbar */
     .navbar {
-      background-color: #111;
+      background-color: rgba(17, 17, 17, 0.8);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
     .navbar-brand {
       color: #fff !important;
@@ -31,40 +35,113 @@
     .navbar-brand span {
       color: #c40000;
     }
+    .nav-link {
+      color: #ccc !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: #fff !important;
+    }
 
-    /* Hero section */
+    /* Hero */
     .hero {
       text-align: center;
-      padding: 100px 20px;
+      padding: 120px 20px 80px;
     }
     .hero img {
-      max-width: 220px;
-      margin-bottom: 40px;
+      max-width: 180px;
+      margin-bottom: 25px;
+      filter: drop-shadow(0 0 15px rgba(196, 0, 0, 0.4));
     }
     .hero h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 3rem;
+      font-size: 3.2rem;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
     .hero p {
       color: #aaa;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       letter-spacing: 1px;
     }
 
-    /* Contact section */
+    /* Über uns */
+    .about {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .about h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      color: #c40000;
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+    }
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #ccc;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* Cards */
+    .cards {
+      padding: 60px 20px 80px;
+    }
+    .card-glass {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 30px;
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    .card-glass:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(196, 0, 0, 0.5);
+    }
+    .card-glass h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      color: #c40000;
+      letter-spacing: 2px;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    /* Gallery */
+    .gallery {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .gallery h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      color: #c40000;
+      margin-bottom: 40px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(196, 0, 0, 0.7);
+    }
+
+    /* Contact */
     .contact {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
       border-top: 1px solid #222;
     }
     .contact h2 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #c40000;
-      text-transform: uppercase;
-      letter-spacing: 2px;
       margin-bottom: 25px;
     }
     .contact p {
@@ -89,36 +166,160 @@
       color: #777;
       letter-spacing: 1px;
     }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      z-index: 100;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float i {
+      margin-top: 15px;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* Cookie Banner */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.95rem;
+      z-index: 200;
+    }
+    #cookie-banner button {
+      background: #c40000;
+      border: none;
+      color: #fff;
+      padding: 8px 16px;
+      margin-left: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #cookie-banner button:hover {
+      background: #ff2b2b;
+    }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">MILANE <span>TATTOO</span></a>
+      <button class="navbar-toggler bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon text-white"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">Über uns</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+          <li class="nav-item"><a class="nav-link" href="impressum.html">Impressum</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
+  <!-- Hero -->
   <section class="hero">
-    <img src="8.png" alt="Milane Tattoo Studio Logo">
+    <img src="milane_logo.png" alt="Milane Tattoo Studio Logo">
     <h1>Milane Tattoo Studio</h1>
     <p>Büsserach, Schweiz</p>
   </section>
 
-  <section class="contact">
+  <!-- Über uns -->
+  <section id="about" class="about">
+    <h2>Über uns</h2>
+    <p>Im Milane Tattoo Studio trifft Kunst auf Leidenschaft. Wir gestalten Tattoos mit Präzision, Emotion und Stil – individuell auf dich abgestimmt. Unser Ziel: Tattoos, die deine Geschichte erzählen. Egal ob Fine Line, Realistic, Minimal oder Blackwork – bei uns bist du in professionellen Händen.</p>
+  </section>
+
+  <!-- Cards -->
+  <section class="cards">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <div class="card-glass text-center">
+            <h3>🎉 10% Neueröffnungsrabatt</h3>
+            <p>Feiere mit uns die Neueröffnung und sichere dir <strong>10 % Rabatt</strong> auf dein erstes Tattoo. Nur für kurze Zeit!</p>
+            <a href="https://wa.me/41766259850?text=Hallo!%20Ich%20möchte%20einen%20Tattoo-Termin%20vereinbaren." class="btn btn-danger mt-3 px-4 py-2 rounded-pill shadow">Jetzt Termin sichern</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mt-4 mt-md-0">
+          <div class="card-glass text-center">
+            <h3>✨ Qualität & Präzision</h3>
+            <p>Wir legen höchsten Wert auf exakte Linienführung, perfekte Schattierung und professionelle Beratung – dein Tattoo in Perfektion.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mt-4 mt-lg-0">
+          <div class="card-glass text-center">
+            <h3>🧴 Sauberkeit & Sicherheit</h3>
+            <p>Modernste Hygienestandards, sterile Arbeitsweise und ein angenehmes Studioambiente – dein Wohlbefinden steht an erster Stelle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section id="gallery" class="gallery">
+    <h2>Galerie</h2>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-4"><img src="tattoo1.jpg" alt="Tattoo Beispiel 1"></div>
+        <div class="col-6 col-md-4"><img src="tattoo2.jpg" alt="Tattoo Beispiel 2"></div>
+        <div class="col-6 col-md-4"><img src="tattoo3.jpg" alt="Tattoo Beispiel 3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="contact" class="contact">
     <div class="container">
       <h2>Kontakt</h2>
       <p>📍 Hauptstrasse, 4227 Büsserach</p>
-      <p>📞 <a href="tel:+41791234567">+41 79 000 00 00</a></p>
-      <p>📧 <a href="mailto:info@milanetattoo.ch">info@milane.ch</a></p>
-      <p>Folge uns auf Instagram: <a href="#">@milane.tattoo</a></p>
+      <p>📞 <a href="tel:+41766259850">+41 76 625 98 50</a></p>
+      <p>📧 <a href="mailto:info@milane.ch">info@milane.ch</a></p>
+      <p>📸 Folge uns auf Instagram: <a href="https://www.instagram.com/milane.tattoo" target="_blank">@milane.tattoo</a></p>
     </div>
   </section>
 
   <footer>
-    © 2025 Milane Tattoo Studio – Büsserach
+    © 2025 Milane Tattoo Studio – Büsserach | Designed with ❤️ by c3ntum | <a href="impressum.html">Impressum</a>
   </footer>
 
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/41766259850?text=Hallo!%20Ich%20möchte%20einen%20Tattoo-Termin%20vereinbaren." class="whatsapp-float" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner">
+    Diese Website verwendet Cookies, um dir das beste Erlebnis zu bieten.
+    <button onclick="document.getElementById('cookie-banner').style.display='none'">Verstanden</button>
+  </div>
+
+  <!-- Bootstrap Icons + JS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
