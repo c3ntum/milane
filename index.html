@@ -430,7 +430,7 @@
       }
     }
 
-    .faq-container {
+.faq-container {
   max-width: 800px;
   margin: 50px auto;
   font-family: 'Arial', sans-serif;
@@ -444,19 +444,25 @@
   letter-spacing: 1px;
 }
 
+/* Glass Card Box */
 .faq-item {
-  background-color: #111;
-  border-bottom: 1px solid #333;
-  padding: 18px 20px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px 25px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.3s ease, transform 0.25s ease;
 }
 
 .faq-item:hover {
-  background-color: #181818;
+  background: rgba(255, 255, 255, 0.10);
+  transform: translateY(-2px);
 }
 
+/* Frage */
 .faq-question {
   cursor: pointer;
   font-size: 19px;
@@ -471,12 +477,13 @@
   font-size: 22px;
 }
 
+/* Antwort */
 .faq-answer {
   display: none;
-  margin-top: 12px;
+  margin-top: 15px;
   font-size: 16px;
-  color: #bbb;
-  line-height: 1.6;
+  color: #e3e3e3;
+  line-height: 1.7;
 }
 
 .faq-item.active .faq-answer {
@@ -780,6 +787,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
 </script>
 </body>
 </html>
+
 
 
 
