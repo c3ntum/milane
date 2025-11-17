@@ -46,6 +46,64 @@
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was macht das Milane Tattoo Studio besonders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Milane ist spezialisiert auf Fine Line und Realistic Tattoos. Jedes Tattoo wird individuell gestaltet, mit modernster Technik und Schweizer Hygienestandards für eine lange Haltbarkeit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bietet ihr Fine-Line Tattoos an?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Unsere Fine-Line Tattoos zeichnen sich durch extrem dünne, elegante Linien aus und eignen sich perfekt für filigrane Designs, Schriftzüge und florale Motive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich bei euch ein realistisches Tattoo stechen lassen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, wir bieten hochwertige Realistic Tattoos an. Dazu gehören Portraits, Tiere, Objekte und detailreiche Motive mit präziser Schattierungstechnik."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie läuft ein Tattoo-Termin ab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vor dem Termin gibt es ein Beratungsgespräch, in dem Motiv, Größe, Platzierung und Stil besprochen werden. Das Design wird individuell erstellt und am Tattoo-Termin finalisiert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wo befindet sich das Milane Tattoo Studio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das Studio befindet sich in Büsserach (Basel-Landschaft) und ist gut erreichbar aus Laufen, Breitenbach, Dornach, Solothurn und Basel. Parkplätze sind direkt vor dem Studio verfügbar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie kann ich einen Termin vereinbaren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Am einfachsten via WhatsApp unter +41 76 377 90 77 oder per E-Mail an milane.tattoo@gmail.com."
+      }
+    }
+  ]
+}
+</script>
+
+
   <!-- Structured Data (Local SEO Rich Snippet) -->
   <script type="application/ld+json">
   {
@@ -371,6 +429,63 @@
         padding-top: 100px;
       }
     }
+
+    .faq-container {
+  max-width: 800px;
+  margin: 50px auto;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+}
+
+.faq-container h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.faq-item {
+  background-color: #111;
+  border-bottom: 1px solid #333;
+  padding: 18px 20px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: #181818;
+}
+
+.faq-question {
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question span {
+  transition: transform 0.3s ease;
+  font-size: 22px;
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 12px;
+  font-size: 16px;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-question span {
+  transform: rotate(90deg);
+}
   </style>
 </head>
 
@@ -515,6 +630,80 @@
     </div>
   </section>
 
+  <!--FAQ-->
+  <div class="faq-container">
+  <h2>Häufige Fragen (FAQ)</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <p>Was macht das Milane Tattoo Studio besonders?</p>
+      <span>➤</span>
+    </div>
+    <div class="faq-answer">
+      Wir sind spezialisiert auf Fine Line & Realistic Tattoos. Jedes Tattoo wird individuell gestaltet,
+      mit moderner Technik und Schweizer Hygienestandards – für filigrane, langlebige Tätowierungen.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <p>Bietet ihr Fine-Line Tattoos an?</p>
+      <span>➤</span>
+    </div>
+    <div class="faq-answer">
+      Ja! Unsere Fine-Line Tattoos sind ultrafein, elegant und perfekt für minimalistische Designs,
+      florale Motive oder zarte Schriftzüge.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <p>Kann ich bei euch ein realistisches Tattoo stechen lassen?</p>
+      <span>➤</span>
+    </div>
+    <div class="faq-answer">
+      Absolut. Wir bieten professionelle Realistic Tattoos an – Portraits, Tiere,
+      Objekte und detaillierte Motive mit präziser Schattierungstechnik.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <p>Wie läuft ein Tattoo-Termin ab?</p>
+      <span>➤</span>
+    </div>
+    <div class="faq-answer">
+      Du bekommst zuerst eine persönliche Beratung, in der wir dein Motiv, die Größe und
+      die Platzierung besprechen. Danach erstellen wir dein individuelles Design und
+      finalisieren es am Tattoo-Tag.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <p>Wo befindet sich das Studio?</p>
+      <span>➤</span>
+    </div>
+    <div class="faq-answer">
+      Das Milane Tattoo Studio liegt in Büsserach (Basel-Landschaft) – gut erreichbar aus
+      Laufen, Breitenbach, Dornach, Solothurn und Basel. Parkplätze gibt es direkt vor Ort.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <p>Wie kann ich einen Termin buchen?</p>
+      <span>➤</span>
+    </div>
+    <div class="faq-answer">
+      Direkt via WhatsApp: <strong>+41 76 377 90 77</strong>  
+      oder per E-Mail: <strong>milane.tattoo@gmail.com</strong>.
+    </div>
+  </div>
+
+</div>
+
+
   <!-- Footer -->
   <footer>
     © 2025 Milane Tattoo Studio – Büsserach | Designed with ❤️ by c3ntum |
@@ -580,8 +769,18 @@
       }
     });
   </script>
+
+  
+<script> //faq
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-question').addEventListener('click', () => {
+    item.classList.toggle('active');
+  });
+});
+</script>
 </body>
 </html>
+
 
 
 
