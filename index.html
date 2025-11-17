@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,9 +7,6 @@
 
   <!-- Meta Description -->
   <meta name="description" content="Milane Tattoo Studio in Büsserach (Schweiz) – Fine Line & Realistic Tattoos, internationale Guest Artists, professionelle Beratung & höchste Hygienestandards. Jetzt Termin sichern!">
-
-  <!-- Keywords -->
-  <meta name="keywords" content="Tattoo Studio Schweiz, Tattoo Büsserach, Fine Line Tattoo, Realistic Tattoo, Schwarz Weiss Tattoo, Tattoo Artist Mallorca, Tattoo Guest Artist, Tattoo Studio Baselbiet, Milane Tattoo Studio">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://milane.ch/">
@@ -46,7 +41,7 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Structured Data -->
+  <!-- Structured Data (Local SEO Rich Snippet) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -77,8 +72,6 @@
     ]
   }
   </script>
-
-  <!-- DESIGN / CSS (deiner bleibt unverändert) -->
   <style>
     body {
       background:
@@ -94,10 +87,12 @@
       scroll-behavior: smooth;
     }
 
+    /* Glow for titles */
     h1, h2, h3 {
       text-shadow: 0 0 12px rgba(196, 0, 0, 0.6);
     }
 
+    /* Navbar */
     .navbar {
       background-color: rgba(17, 17, 17, 0.8);
       backdrop-filter: blur(10px);
@@ -121,19 +116,75 @@
       color: #fff !important;
     }
 
-    .hero { text-align: center; padding: 120px 20px 80px; }
-    .hero img { max-width: 180px; margin-bottom: 25px; filter: drop-shadow(0 0 20px rgba(196, 0, 0, 0.6)); }
-
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 120px 20px 80px;
+    }
+    .hero img {
+      max-width: 180px;
+      margin-bottom: 25px;
+      filter: drop-shadow(0 0 20px rgba(196, 0, 0, 0.6));
+    }
     .hero h1 {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 3.2rem;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
+    .hero p {
+      color: #aaa;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
 
-    .about { padding: 80px 20px; text-align: center; }
-    .about p { max-width: 700px; margin: 0 auto; color: #ccc; line-height: 1.7; }
+    /* Über uns */
+    .about {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .about h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      color: #c40000;
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+    }
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #ccc;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
 
+    /* Cards */
+    .cards {
+      padding: 60px 20px 80px;
+    }
+    .card-glass {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 30px;
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    .card-glass:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(196, 0, 0, 0.6);
+    }
+    .card-glass h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      color: #c40000;
+      letter-spacing: 2px;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    /* White Guest Cards */
     .card-white {
       background: #fff;
       color: #000;
@@ -142,20 +193,106 @@
       box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
       transition: all 0.3s ease;
     }
-
     .card-white:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 35px rgba(255, 255, 255, 0.45);
     }
+    .card-white h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      color: #c40000;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+    .card-white p {
+      font-size: 1rem;
+      color: #333;
+    }
+    .guest-img {
+      border-radius: 15px;
+      max-width: 100%;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
 
-    .guest-img { border-radius: 15px; width: 100%; margin-bottom: 15px; }
+    /* Zwischenblock */
+    .mid-text {
+      text-align: center;
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .mid-text h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      color: #c40000;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .mid-text p {
+      color: #ccc;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
 
-    .gallery img { width: 100%; border-radius: 15px; transition: .4s; }
+    /* Gallery */
+    .gallery {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .gallery h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      color: #c40000;
+      margin-bottom: 40px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
 
-    .contact { text-align: center; padding: 80px 20px; }
+    /* Contact */
+    .contact {
+      text-align: center;
+      padding: 80px 20px;
+      border-top: 1px solid #222;
+    }
+    .contact h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      color: #c40000;
+      margin-bottom: 25px;
+    }
+    .contact p {
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 10px;
+    }
+    a {
+      color: #c40000;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #fff;
+    }
 
-    footer { border-top: 1px solid #222; padding: 20px; color: #777; text-align: center; font-size: 0.9rem; }
+    /* Footer */
+    footer {
+      border-top: 1px solid #222;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+      letter-spacing: 1px;
+    }
 
+    /* WhatsApp Button */
     .whatsapp-float {
       position: fixed;
       width: 60px;
@@ -164,21 +301,57 @@
       right: 25px;
       background-color: #25d366;
       color: #fff;
-      border-radius: 50%;
+      border-radius: 50px;
       text-align: center;
       font-size: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
       z-index: 100;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float i {
+      margin-top: 15px;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* Cookie Banner */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.95rem;
+      z-index: 200;
+    }
+    #cookie-banner button {
+      background: #c40000;
+      border: none;
+      color: #fff;
+      padding: 8px 16px;
+      margin-left: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #cookie-banner button:hover {
+      background: #ff2b2b;
     }
   </style>
 </head>
 
 <body>
-
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">MILANE <span>TATTOO</span></a>
-      <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon text-white"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
@@ -199,52 +372,59 @@
 
   <section id="about" class="about">
     <h2>Über uns</h2>
-    <p>Im Milane Tattoo Studio trifft Kunst auf Leidenschaft. Wir gestalten Tattoos mit Präzision, Emotion und Stil – individuell auf dich abgestimmt.</p>
+    <p>Im Milane Tattoo Studio trifft Kunst auf Leidenschaft. Wir gestalten Tattoos mit Präzision, Emotion und Stil – individuell auf dich abgestimmt. Unser Ziel: Tattoos, die deine Geschichte erzählen. Egal ob Fine Line, Realistic, Minimal oder Blackwork – bei uns bist du in professionellen Händen.</p>
   </section>
 
   <section class="cards">
     <div class="container">
       <div class="row justify-content-center">
+     <div class="col-md-6 col-lg-4 mb-4">
+  <div class="card-white text-center">
+    <img src="storytell1.png" alt="David Tattoo Artist" class="guest-img">
+    <h3>💥 26.11 - 1.12.2025 💥</h3>
+    <p>
+      🇩🇪 Lernt <strong>David</strong> kennen — ein Tattoo-Künstler mit über <strong>14 Jahren Erfahrung</strong> aus Palma dre Mallorca.<br>
+      Sein Schwerpunkt: <strong>Fine Line</strong>, <strong>Schwarz & Weiss Realismus</strong>
+    </p>
+    <p>
+      📍 Nur für kurze Zeit bei uns in <strong>Büsserach</strong> – sichert euch euren Spot!<br>
+      Kommt vorbei, erzählt ihm eure Idee und lasst euch unverbindlich beraten.
+    </p>
+  </div>
+</div>
 
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card-white text-center">
-            <img src="storytell1.png" alt="Tattoo Artist David im Milane Tattoo Studio Büsserach" class="guest-img">
-            <h3>💥 26.11 - 1.12.2025 💥</h3>
-            <p>🇩🇪 Lernt <strong>David</strong> kennen — Tattoo-Künstler mit über <strong>14 Jahren Erfahrung</strong> aus Palma de Mallorca. Spezialisiert auf <strong>Fine Line</strong> & <strong>Realistic Black & Grey</strong>.</p>
-            <p>📍 Nur kurze Zeit in <strong>Büsserach</strong> – jetzt Termin sichern!</p>
-          </div>
-        </div>
 
+      
       </div>
 
-      <div class="mid-text text-center">
+      <div class="mid-text">
         <h2>Milane Tattoo Studio – wo Leidenschaft auf Präzision trifft</h2>
-        <p>Wir nehmen uns Zeit für jedes Motiv, jede Linie und jeden Kunden. Individuelle Tattoos, höchste Hygiene & starke Beratung.</p>
+        <p>Unser Studio steht für Qualität, Kreativität und echtes Handwerk. Wir nehmen uns Zeit für jedes Motiv, jede Linie und jeden Kunden. Bei uns entstehen keine Tattoos von der Stange, sondern Werke mit Bedeutung – individuell, sauber und mit Liebe zum Detail gestochen. Moderne Ausstattung, höchste Hygienestandards und ein erfahrenes Team sorgen dafür, dass du dich bei uns rundum wohl fühlst – vom ersten Entwurf bis zum fertigen Kunstwerk.</p>
       </div>
 
       <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4">
-          <div class="card-white text-center">
+          <div class="card-glass text-center">
             <h3>🎉 10% Neueröffnungsrabatt</h3>
-            <p>Sichere dir 10 % Rabatt auf dein erstes Tattoo – nur für kurze Zeit.</p>
+            <p>Feiere mit uns die Neueröffnung und sichere dir <strong>10 % Rabatt</strong> auf dein erstes Tattoo. Nur für kurze Zeit!</p>
+            <a href="https://wa.me/41766259850?text=Hallo!%20Ich%20möchte%20einen%20Tattoo-Termin%20vereinbaren." class="btn btn-danger mt-3 px-4 py-2 rounded-pill shadow">Jetzt Termin sichern</a>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 mt-4 mt-md-0">
-          <div class="card-white text-center">
+          <div class="card-glass text-center">
             <h3>✨ Qualität & Präzision</h3>
-            <p>Perfekte Linienführung, saubere Schattierung & professionelle Beratung.</p>
+            <p>Wir legen höchsten Wert auf exakte Linienführung, perfekte Schattierung und professionelle Beratung – dein Tattoo in Perfektion.</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 mt-4 mt-lg-0">
-          <div class="card-white text-center">
-            <h3>🧴 Hygiene</h3>
-            <p>Modernste Hygiene-Standards für deine Sicherheit.</p>
+          <div class="card-glass text-center">
+            <h3>🧴 Sauberkeit & Sicherheit</h3>
+            <p>Modernste Hygienestandards, sterile Arbeitsweise und ein angenehmes Studioambiente – dein Wohlbefinden steht an erster Stelle.</p>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -252,35 +432,37 @@
   <h2>Galerie</h2>
   <div class="container">
     <div class="row g-4">
-      <div class="col-6 col-md-4"><img src="example1.jpg" alt="Fine Line Tattoo von David im Milane Tattoo Studio Büsserach"></div>
-      <div class="col-6 col-md-4"><img src="example2.jpg" alt="Realistic Tattoo Black and Grey von David im Milane Tattoo Studio"></div>
-      <div class="col-6 col-md-4"><img src="example3.jpg" alt="Tattoo Kunstwerk Fine Line – David, Milane Tattoo Studio"></div>
-      <div class="col-6 col-md-4"><img src="example4.jpg" alt="Realistic Tattoo Motiv – Büsserach Tattoo Studio"></div>
-      <div class="col-6 col-md-4"><img src="example5.jpg" alt="Detailreiches Fine Line Tattoo Motiv im Milane Tattoo Studio"></div>
-      <div class="col-6 col-md-4"><img src="example6.jpg" alt="Schwarz-Weiss Tattoo Realismus"></div>
-      <div class="col-6 col-md-4"><img src="example7.jpg" alt="David Tattoo Galerie – Realistic Style"></div>
-      <div class="col-6 col-md-4"><img src="example8.jpg" alt="Feine Tattoo Linien – Milane Tattoo Studio"></div>
-      <div class="col-6 col-md-4"><img src="example9.jpg" alt="Tattoo Design Fine Line & Realistic – Büsserach"></div>
+      <div class="col-6 col-md-4"><img src="example1.jpg" alt="David – Fine Line und Realistic Tattoo Artist im Milane Tattoo Studio Büsserach"></div>
+      <div class="col-6 col-md-4"><img src="example2.jpg" alt="David – Fine Line und Realistic Tattoo Artist im Milane Tattoo Studio Büsserach"></div>
+      <div class="col-6 col-md-4"><img src="example3.jpg" alt="Fine Line Tattoo Motiv von David im Milane Tattoo Studio Büsserach"></div>
+      <div class="col-6 col-md-4"><img src="example4.jpg" alt="Realistic Tattoo Artwork von David im Milane Tattoo Studio Büsserach"></div>
+      <div class="col-6 col-md-4"><img src="example5.jpg" alt="Detailreiches Fine Line Tattoo von David – Milane Tattoo Studio Büsserach"></div>
+      <div class="col-6 col-md-4"><img src="example6.jpg" alt="Schwarz-Weiss Tattoo von David im Milane Tattoo Studio Büsserach"></div>
+      <div class="col-6 col-md-4"><img src="example7.jpg" alt="Tattoo Realismus Stil – David, Guest Artist im Milane Tattoo Studio"></div>
+      <div class="col-6 col-md-4"><img src="example8.jpg" alt="Fein gearbeitetes Tattoo von David – Milane Tattoo Studio Büsserach"></div>
+      <div class="col-6 col-md-4"><img src="example9.jpg" alt="David Tattoo Galerie – Fine Line & Realistic im Milane Studio"></div>
     </div>
   </div>
 </section>
 
   <section id="contact" class="contact">
-    <h2>Kontakt</h2>
-    <p>📍 Breitenbachstrasse 56, 4227 Büsserach</p>
-    <p>📞 <a href="tel:+41766259850">+41 76 625 98 50</a></p>
-    <p>📧 <a href="mailto:tattoo@milane.ch">tattoo@milane.ch</a></p>
-    <p>📸 Folge uns: <a href="https://www.instagram.com/milane_tattoo_studio" target="_blank">@milane_tattoo_studio</a></p>
+    <div class="container">
+      <h2>Kontakt</h2>
+      <p>📍 Breitenbachstrasse 56, 4227 Büsserach</p>
+      <p>📞 <a href="tel:+41766259850">+41 76 625 98 50</a></p>
+      <p>📧 <a href="mailto:info@milane.ch">tattoo@milane.ch</a></p>
+      <p>📸 Folge uns auf Instagram: <a href="https://www.instagram.com/milane_tattoo_studio" target="_blank">@milane_tattoo_studio</a></p>
+    </div>
   </section>
 
   <footer>
-    © 2025 Milane Tattoo Studio – Büsserach | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
-
+    © 2025 Milane Tattoo Studio – Büsserach | Designed with ❤️ by c3ntum | <a href="impressum.html">Impressum</a> | <a href="haftung.html">Haftung</a> | <a href="agb.html">AGB</a> | <a href="datenschutz.html">Datenschutz</a>
+  
     <p style="font-size: 12px; color: #777; margin-top: 20px;">
-      Alle auf dieser Website verwendeten Bilder, Tattoos und künstlerischen Arbeiten unterliegen dem Urheberrecht des jeweiligen Künstlers. 
-      Eine Nutzung, Vervielfältigung oder Weiterverwendung ist ohne schriftliche Zustimmung des Künstlers nicht gestattet. 
-      © Milane Tattoo Studio – alle Rechte vorbehalten.
-    </p>
+  Alle auf dieser Website verwendeten Bilder, Tattoos und künstlerischen Arbeiten unterliegen dem Urheberrecht des jeweiligen Künstlers. 
+  Eine Nutzung, Vervielfältigung oder Weiterverwendung ist ohne schriftliche Zustimmung des Künstlers nicht gestattet. 
+  © Milane Tattoo Studio – alle Rechte vorbehalten.
+</p>
   </footer>
 
   <a href="https://wa.me/41766259850?text=Hallo!%20Ich%20möchte%20einen%20Tattoo-Termin%20vereinbaren." class="whatsapp-float" target="_blank">
@@ -294,6 +476,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
+
+
