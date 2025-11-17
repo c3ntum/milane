@@ -25,61 +25,43 @@
   <meta property="og:url" content="https://milane.ch/">
   <meta property="og:type" content="business.business">
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Milane Tattoo Studio – Fine Line & Realistic Tattoos">
-  <meta name="twitter:description" content="Tattoo Studio in Büsserach – Qualität, Präzision & internationale Artists.">
-  <meta name="twitter:image" content="https://milane.ch/milane_logo.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="milane_logo.png">
 
-  <!-- Google Fonts -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap" as="style">
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Structured Data (Local SEO Rich Snippet) -->
+  <!-- Local Business Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TattooParlor",
     "name": "Milane Tattoo Studio",
-    "image": "https://milane.ch/milane_logo.png",
-    "@id": "https://milane.ch/",
     "url": "https://milane.ch",
     "telephone": "+41 76 625 98 50",
-    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Breitenbachstrasse 56",
       "addressLocality": "Büsserach",
       "postalCode": "4227",
       "addressCountry": "CH"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "47.391",
-      "longitude": "7.544"
-    },
-    "openingHours": [
-      "Mo-Sa 10:00-18:00"
-    ],
-    "sameAs": [
-      "https://www.instagram.com/milane_tattoo_studio"
-    ]
+    }
   }
   </script>
 
   <style>
+    /* GENERAL */
     body {
-      background:
-        radial-gradient(circle at 25% 30%, rgba(196, 0, 0, 0.25), transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15), transparent 45%),
-        radial-gradient(circle at 50% 100%, rgba(255, 0, 50, 0.15), transparent 60%),
-        #000;
+      background: radial-gradient(circle at 25% 30%, rgba(196,0,0,0.25), transparent 40%),
+                  radial-gradient(circle at 80% 70%, rgba(255,255,255,0.15), transparent 45%),
+                  radial-gradient(circle at 50% 100%, rgba(255,0,50,0.15), transparent 60%),
+                  #000;
       background-attachment: fixed;
       background-blend-mode: screen;
       color: #fff;
@@ -92,97 +74,171 @@
       text-shadow: 0 0 12px rgba(196, 0, 0, 0.6);
     }
 
+    /* NAVBAR */
     .navbar {
-      background-color: rgba(17, 17, 17, 0.8);
+      background-color: rgba(17,17,17,0.8);
       backdrop-filter: blur(10px);
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
     .navbar-brand {
       color: #fff !important;
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Bebas Neue';
       font-size: 1.8rem;
       letter-spacing: 3px;
     }
+
     .navbar-brand span {
       color: #c40000;
     }
+
     .nav-link {
       color: #ccc !important;
-      font-weight: 500;
     }
+
     .nav-link:hover {
       color: #fff !important;
     }
 
+    /* HERO */
     .hero {
       text-align: center;
-      padding: 120px 20px 80px;
+      padding: 130px 20px 80px;
     }
+
     .hero img {
       max-width: 180px;
       margin-bottom: 25px;
+      filter: drop-shadow(0 0 20px rgba(196,0,0,0.6));
     }
 
+    /* ABOUT */
     .about {
       padding: 80px 20px;
       text-align: center;
     }
 
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #ccc;
+      line-height: 1.7;
+    }
+
+    /* CARDS */
     .cards {
       padding: 60px 20px 80px;
     }
 
-    .card-glass, .card-white {
+    /* Glass Card */
+    .card-glass {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(15px);
       border-radius: 20px;
       padding: 30px;
-      transition: all 0.3s ease;
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+    .card-glass:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(196,0,0,0.6);
     }
 
+    /* White Card (Guest Artist) */
     .card-white {
       background: #fff;
       color: #000;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.2);
+      transition: 0.3s;
+    }
+    .card-white:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 35px rgba(255,255,255,0.45);
     }
 
+    .guest-img {
+      width: 260px;
+      max-width: 100%;
+      border-radius: 15px;
+      display: block;
+      margin: 0 auto 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    /* MID TEXT */
     .mid-text {
+      max-width: 800px;
+      margin: auto;
       text-align: center;
       padding: 50px 20px;
-      max-width: 800px;
-      margin: 0 auto;
+      color: #ccc;
     }
 
-    /* Gallery */
+    /* GALLERY */
     .gallery {
       padding: 80px 20px;
       text-align: center;
     }
+
     .gallery img {
       width: 100%;
       border-radius: 15px;
       cursor: pointer;
       transition: transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
+
     .gallery img:hover {
       transform: scale(1.05);
     }
 
-    /* CONTACT in Milane Style */
+    /* LIGHTBOX */
+    .lightbox-bg {
+      position: fixed;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(5px);
+      z-index: 99999;
+    }
+
+    .lightbox-bg img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+      animation: fadeIn 0.3s ease;
+      box-shadow: 0 0 25px rgba(255,255,255,0.4);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* CONTACT */
     .contact {
-      text-align: center;
-      padding: 80px 20px;
       background: #000;
+      padding: 80px 20px;
+      text-align: center;
       border-top: 1px solid #222;
     }
 
     .contact h2 {
+      color: #c40000;
       font-family: 'Bebas Neue';
       font-size: 2.4rem;
-      color: #c40000;
-      letter-spacing: 2px;
-      margin-bottom: 25px;
     }
 
-    .contact p {
+    .contact p, .contact a {
       color: #eee;
       font-size: 1.1rem;
     }
@@ -192,76 +248,50 @@
       font-weight: 600;
     }
 
-    /* Lightbox */
-    .lightbox-bg {
-      position: fixed;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.85);
-      z-index: 99999;
-      backdrop-filter: blur(4px);
-    }
-
-    .lightbox-bg img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 25px rgba(255,255,255,0.4);
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
+    /* FOOTER */
     footer {
-      border-top: 1px solid #222;
-      text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
+      text-align: center;
+      border-top: 1px solid #222;
       color: #777;
+      font-size: 0.9rem;
     }
 
-    /* Cookie Banner */
+    /* COOKIE BANNER */
     #cookie-banner {
       position: fixed;
-      bottom: 0;
-      left: 0;
+      bottom: 0; left: 0;
       width: 100%;
       background: rgba(0,0,0,0.85);
-      padding: 15px;
       color: #fff;
+      padding: 15px;
       text-align: center;
       z-index: 200;
+      backdrop-filter: blur(5px);
     }
 
     #cookie-banner button {
       background: #c40000;
       border: none;
-      padding: 8px 16px;
-      margin-left: 10px;
-      border-radius: 5px;
       color: #fff;
+      padding: 8px 16px;
+      border-radius: 5px;
+      margin-left: 10px;
       cursor: pointer;
     }
-
   </style>
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">MILANE <span>TATTOO</span></a>
       <button class="navbar-toggler bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon text-white"></span>
       </button>
+
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="#about">Über uns</a></li>
@@ -273,17 +303,20 @@
     </div>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
     <img src="milane_logo.png" alt="Milane Tattoo Studio Logo">
     <h1>Milane Tattoo Studio</h1>
     <p>Büsserach, Schweiz</p>
   </section>
 
+  <!-- ABOUT -->
   <section id="about" class="about">
     <h2>Über uns</h2>
     <p>Im Milane Tattoo Studio trifft Kunst auf Leidenschaft. Wir gestalten Tattoos mit Präzision, Emotion und Stil – individuell auf dich abgestimmt.</p>
   </section>
 
+  <!-- GUEST ARTIST -->
   <section class="cards">
     <div class="container">
       <div class="row justify-content-center">
@@ -293,41 +326,42 @@
             <img src="storytell1.png" alt="David Tattoo Artist" class="guest-img">
             <h3>💥 26.11 - 1.12.2025 💥</h3>
             <p>
-              🇩🇪 Lernt <strong>David</strong> kennen — ein Tattoo-Künstler mit über <strong>14 Jahren Erfahrung</strong> aus Palma de Mallorca.<br>
-              Schwerpunkt: <strong>Fine Line</strong>, <strong>Schwarz & Weiss Realismus</strong>
+              Lernt <strong>David</strong> kennen — Tattoo-Künstler aus Palma de Mallorca mit über <strong>14 Jahren Erfahrung</strong>.<br>
+              Schwerpunkt: <strong>Fine Line</strong> & <strong>Realistic Black & White</strong>
             </p>
             <p>
-              📍 Nur für kurze Zeit in <strong>Büsserach</strong> – sichert euch euren Spot!
+              📍 Nur wenige Tage in <strong>Büsserach</strong> – sichert euch euren Spot!
             </p>
           </div>
         </div>
 
       </div>
 
+      <!-- MID BLOCK -->
       <div class="mid-text">
         <h2>Milane Tattoo Studio – wo Leidenschaft auf Präzision trifft</h2>
-        <p>Unser Studio steht für Qualität, Kreativität und echtes Handwerk.</p>
+        <p>Wir stehen für Qualität, Kreativität und echte Handwerkskunst.</p>
       </div>
 
       <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4">
           <div class="card-glass text-center">
             <h3>🎉 10% Neueröffnungsrabatt</h3>
-            <p>Sichere dir 10 % Rabatt auf dein erstes Tattoo.</p>
+            <p>Sichere dir 10% Rabatt auf dein erstes Tattoo – nur für kurze Zeit.</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 mt-4 mt-md-0">
           <div class="card-glass text-center">
             <h3>✨ Qualität & Präzision</h3>
-            <p>Exakte Linienführung, perfekte Schattierung – Tattoo Perfektion.</p>
+            <p>Exakte Linien, perfekte Schattierungen, moderne Technik.</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 mt-4 mt-lg-0">
           <div class="card-glass text-center">
             <h3>🧴 Sauberkeit & Sicherheit</h3>
-            <p>Modernste Hygienestandards und angenehme Atmosphäre.</p>
+            <p>Modernste Hygienestandards & Wohlfühl-Atmosphäre.</p>
           </div>
         </div>
       </div>
@@ -335,54 +369,56 @@
     </div>
   </section>
 
+  <!-- GALLERY -->
   <section id="gallery" class="gallery">
     <h2>Galerie</h2>
     <div class="container">
       <div class="row g-4">
 
-        <div class="col-6 col-md-4"><img src="bilder/example1.png" alt=""></div>
-        <div class="col-6 col-md-4"><img src="bilder/example2.png" alt=""></div>
-        <div class="col-6 col-md-4"><img src="bilder/example3.png" alt=""></div>
-        <div class="col-6 col-md-4"><img src="bilder/example4.png" alt=""></div>
-        <div class="col-6 col-md-4"><img src="bilder/example5.png" alt=""></div>
-        <div class="col-6 col-md-4"><img src="bilder/example6.png" alt=""></div>
-        <div class="col-6 col-md-4"><img src="bilder/example7.png" alt=""></div>
-        <div class="col-6 col-md-4"><img src="bilder/example8.png" alt=""></div>
-        <div class="col-6 col-md-4"><img src="bilder/example9.png" alt=""></div>
+        <div class="col-6 col-md-4"><img src="bilder/example1.png" loading="lazy" alt=""></div>
+        <div class="col-6 col-md-4"><img src="bilder/example2.png" loading="lazy" alt=""></div>
+        <div class="col-6 col-md-4"><img src="bilder/example3.png" loading="lazy" alt=""></div>
+        <div class="col-6 col-md-4"><img src="bilder/example4.png" loading="lazy" alt=""></div>
+        <div class="col-6 col-md-4"><img src="bilder/example5.png" loading="lazy" alt=""></div>
+        <div class="col-6 col-md-4"><img src="bilder/example6.png" loading="lazy" alt=""></div>
+        <div class="col-6 col-md-4"><img src="bilder/example7.png" loading="lazy" alt=""></div>
+        <div class="col-6 col-md-4"><img src="bilder/example8.png" loading="lazy" alt=""></div>
+        <div class="col-6 col-md-4"><img src="bilder/example9.png" loading="lazy" alt=""></div>
 
       </div>
     </div>
   </section>
 
-  <!-- Lightbox Element -->
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox-bg" onclick="this.style.display='none'">
     <img id="lightbox-img" src="">
   </div>
 
+  <!-- CONTACT -->
   <section id="contact" class="contact">
     <div class="container">
       <h2>Kontakt</h2>
       <p>📍 Breitenbachstrasse 56, 4227 Büsserach</p>
       <p>📞 <a href="tel:+41766259850">+41 76 625 98 50</a></p>
       <p>📧 <a href="mailto:tattoo@milane.ch">tattoo@milane.ch</a></p>
-      <p>📸 Folge uns: <a href="https://www.instagram.com/milane_tattoo_studio" target="_blank">@milane_tattoo_studio</a></p>
+      <p>📸 <a href="https://www.instagram.com/milane_tattoo_studio" target="_blank">@milane_tattoo_studio</a></p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    © 2025 Milane Tattoo Studio – Büsserach | Designed by c3ntum  
+    © 2025 Milane Tattoo Studio – Büsserach | Designed with ❤️ by c3ntum  
   </footer>
 
+  <!-- COOKIE BANNER -->
   <div id="cookie-banner">
-    Diese Website verwendet Cookies, um dir das beste Erlebnis zu bieten.
+    Diese Website verwendet Cookies.
     <button onclick="document.getElementById('cookie-banner').style.display='none'">OK</button>
   </div>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+  <!-- JS -->
   <script>
-    // Lightbox Code
+    // Lightbox
     document.querySelectorAll('.gallery img').forEach(img => {
       img.addEventListener('click', () => {
         document.getElementById('lightbox-img').src = img.src;
