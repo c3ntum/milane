@@ -11,9 +11,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --accent: #c40000;
+      --bg: #000;
+      --glass-bg: rgba(20,20,20,0.35);
+      --glass-border: rgba(255,255,255,0.08);
+      --glass-shadow: rgba(196,0,0,0.18);
+      --text: #e5e5e5;
+      --text-muted: #aaa;
+    }
+
     body {
-      background-color: #000;
-      color: #e5e5e5;
+      background-color: var(--bg);
+      color: var(--text);
       font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
@@ -31,10 +41,11 @@
     }
 
     .logo {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Bebas Neue';
       font-size: 1.8rem;
-      color: #c40000;
+      color: var(--accent);
       text-decoration: none;
+      letter-spacing: 1.5px;
     }
 
     .menu-toggle {
@@ -54,18 +65,17 @@
       display: block;
       color: #ccc;
       padding: 8px 0;
-      text-decoration: none;
       font-size: 1rem;
+      text-decoration: none;
     }
 
-    /* TOP BACKGROUND IMAGE (AS PAGE BACKDROP) */
+    /* TOP BACKGROUND */
     .top-bg {
       width: 100%;
       height: 38vh;
       background-image: url('https://images.pexels.com/photos/4125500/pexels-photo-4125500.jpeg');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
       position: relative;
     }
 
@@ -75,12 +85,11 @@
       inset: 0;
       background: linear-gradient(
         rgba(0,0,0,0.55),
-        rgba(0,0,0,0.8) 60%,
+        rgba(0,0,0,0.80) 60%,
         #000 100%
       );
     }
 
-    /* TITLE ON BACKGROUND */
     .page-title {
       position: absolute;
       z-index: 3;
@@ -91,121 +100,113 @@
 
     .page-title h1 {
       font-family: 'Bebas Neue';
-      font-size: 2.6rem;
-      color: #c40000;
-      text-shadow: 0 0 8px #000;
-      margin: 0;
+      font-size: 2.8rem;
+      color: var(--accent);
+      text-shadow: 0 0 6px #000;
     }
 
     .page-title p {
-      font-size: 0.9rem;
       color: #ddd;
+      font-size: 0.9rem;
       margin-top: 4px;
     }
 
-    /* CONTENT */
+    /* GLASS CONTENT BOX */
     .content-box {
       max-width: 900px;
-      margin: -10px auto 0; /* Content beginnt fast direkt unter dem Bild */
-      background: #111;
-      padding: 24px;
-      border-radius: 10px;
-      box-shadow: 0 0 12px rgba(255,0,0,0.1);
+      margin: -20px auto 0;
+      padding: 30px;
+      border-radius: 16px;
+
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 6px 18px var(--glass-shadow);
     }
 
     h2 {
       font-family: 'Bebas Neue';
-      font-size: 1.8rem;
-      color: #c40000;
+      color: var(--accent);
+      font-size: 2rem;
       margin-top: 30px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px rgba(196,0,0,0.4);
     }
 
     h3 {
-      font-size: 1.04rem;
-      color: #c40000;
+      color: var(--accent);
+      font-size: 1.1rem;
       margin-top: 20px;
       font-weight: 600;
     }
 
-    .cta-btn {
-      background: #c40000;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      display: inline-block;
-      margin-top: 14px;
-      text-decoration: none;
-      font-size: 0.95rem;
+    ul {
+      margin-left: 16px;
     }
 
-    .cta-btn:hover { background:#a00000; }
+    /* BUTTONS */
+    .cta-btn {
+      background: rgba(196,0,0,0.85);
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #fff;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(196,0,0,0.4);
+      box-shadow: 0 0 12px rgba(196,0,0,0.35);
+      transition: 0.2s;
+    }
 
-    /* BACK TO TOP BUTTON */
+    .cta-btn:hover {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 0 12px rgba(255,255,255,0.4);
+    }
+
+    /* BACK TO TOP */
     #backToTop {
       position: fixed;
       bottom: 18px;
       right: 18px;
-      background: #c40000;
-      color: #fff;
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
+      background: var(--accent);
       border-radius: 50%;
-      display: flex;
+      display: none;
       justify-content: center;
       align-items: center;
-      font-size: 24px;
+      font-size: 22px;
       cursor: pointer;
-      display: none;
-      z-index: 20;
-      box-shadow: 0 0 10px rgba(255,0,0,0.4);
+      box-shadow: 0 0 12px rgba(196,0,0,0.5);
+      z-index: 30;
     }
 
-    /* FOOTER */
-    .footer {
-      padding: 24px;
+    footer {
       text-align: center;
+      padding: 28px;
+      border-top: 1px solid #222;
       color: #777;
       font-size: 0.85rem;
-      border-top: 1px solid #222;
       margin-top: 40px;
     }
 
-    /* RESPONSIVE */
-    @media (min-width: 768px) {
-      .top-bg { height: 45vh; }
-      .page-title h1 { font-size: 3.4rem; }
-      .page-title p { font-size: 1rem; }
-      .content-box { padding: 40px; }
-    }
-
-    a {
-      color: #c40000;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #fff;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid #222;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #777;
-      letter-spacing: 1px;
-    }
+    footer a { color: var(--accent); }
+    footer a:hover { color: #fff; }
   </style>
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      const m = document.getElementById('mobileMenu');
+      m.style.display = m.style.display === "block" ? "none" : "block";
     }
 
-    window.addEventListener('scroll', () => {
-      const btn = document.getElementById('backToTop');
-      btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    window.addEventListener("scroll", () => {
+      document.getElementById("backToTop").style.display =
+        window.scrollY > 300 ? "flex" : "none";
     });
 
     function scrollTopSmooth() {
@@ -213,7 +214,6 @@
     }
   </script>
 </head>
-
 
 <body>
 
@@ -226,8 +226,8 @@
   <!-- MOBILE MENU -->
   <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Home</a>
-    <a href="tattoo.html">Tattoo Galerie</a>
-    <a href="pflege.html">Pflege & Anleitung</a>
+    <a href="gallerie.html">Tattoo Galerie</a>
+    <a href="infos.html">Pflege</a>
     <a href="kontakt.html">Kontakt</a>
   </div>
 
@@ -235,96 +235,93 @@
   <div class="top-bg">
     <div class="page-title">
       <h1>Tattoo Vorbereitung & Pflege</h1>
-      <p>Die wichtigsten Schritte vor & nach deinem Tattoo – im Milane-Style erklärt.</p>
+      <p>Die wichtigsten Schritte für perfekte Heilung – klar & einfach erklärt.</p>
     </div>
   </div>
 
-  <!-- CONTENT -->
+  <!-- CONTENT BOX (GLASS) -->
   <div class="content-box">
 
-    <h2>1. Vorbereitung – So bereitest du dich vor</h2>
+    <h2>1. Vorbereitung – So bereitest du dich richtig vor</h2>
 
     <h3>1.1 Schlaf & Ernährung</h3>
-    <p>Schlafe gut, iss eine leichte Mahlzeit und trinke Wasser. Ein stabiler Kreislauf verbessert die Heilung.</p>
+    <p>Guter Schlaf, leichte Mahlzeit, Wasser trinken – stabilisiert den Kreislauf.</p>
 
     <h3>1.2 Keine Substanzen</h3>
     <ul>
-      <li>Kein Alkohol 24h vor dem Termin</li>
+      <li>Kein Alkohol 24h vorher</li>
       <li>Keine Blutverdünner</li>
       <li>Keine Drogen</li>
     </ul>
 
     <h3>1.3 Haut vorbereiten</h3>
     <ul>
-      <li>2–3 Tage vorher eincremen</li>
-      <li>Am Termin-Tag NICHT eincremen</li>
-      <li>Kein Solarium, keine Sonne 48h vorher</li>
+      <li>48h vorher nicht in die Sonne</li>
+      <li>2–3 Tage vorher leicht eincremen</li>
+      <li>Am Tattoo-Tag nicht eincremen</li>
     </ul>
 
     <h3>1.4 Kleidung</h3>
-    <p>Bequeme Kleidung, die Zugang zum Tattoo-Bereich ermöglicht.</p>
+    <p>Bequem, locker, Tattoo-Bereich gut zugänglich.</p>
 
     <h3>1.5 Rasur</h3>
-    <p>Bitte nicht selber rasieren – das übernehmen wir.</p>
+    <p>Bitte nicht selbst rasieren – das übernimmt das Studio.</p>
 
     <h3>1.6 Krankheit</h3>
-    <p>Bist du krank → Termin verschieben.</p>
+    <p>Bist du krank → bitte verschieben.</p>
 
     <a class="cta-btn" href="kontakt.html">Fragen zur Vorbereitung?</a>
 
-    <hr style="border-color:#222; margin:30px 0;">
+    <hr style="border-color:#222; margin: 40px 0;">
 
     <h2>2. Pflege – So heilt dein Tattoo perfekt</h2>
 
     <h3>2.1 Die ersten Stunden</h3>
-    <p>Der Verband schützt die Haut. Entferne ihn nach 6–8 Stunden.</p>
+    <p>Verband schützt die Haut – 6–8h drauf lassen.</p>
 
     <h3>2.2 Reinigung</h3>
     <ul>
       <li>Hände waschen</li>
-      <li>Lauwarm abspülen</li>
-      <li>Sanft abtupfen</li>
+      <li>Mit lauwarmem Wasser abspülen</li>
+      <li>Sanft trocken tupfen</li>
     </ul>
 
     <h3>2.3 Eincremen</h3>
-    <p>Dünn auftragen – nicht zu viel, nicht zu wenig.</p>
+    <p>Dünn auftragen – nicht zu viel.</p>
 
-    <h3>2.4 Duschen, Baden & Sport</h3>
+    <h3>2.4 Duschen, Baden, Sport</h3>
     <ul>
-      <li>Kurz, nicht zu heiß duschen</li>
+      <li>Kurz duschen, nicht heiß</li>
       <li>4 Wochen keine Bäder</li>
-      <li>Sportpause: 3–4 Tage</li>
+      <li>Sportpause 3–4 Tage</li>
     </ul>
 
     <h3>2.5 Sonne & UV</h3>
-    <p>4 Wochen keine direkte Sonne. Danach UV-Schutz verwenden.</p>
+    <p>4 Wochen keine Sonne – später UV-Schutz verwenden.</p>
 
     <h3>2.6 Krusten & Juckreiz</h3>
-    <p>Kruste nicht entfernen.</p>
+    <p>Nicht kratzen – Kruste schützt.</p>
 
     <h3>2.7 Tiefenheilung</h3>
-    <p>Innen heilt die Haut 3–6 Wochen weiter.</p>
+    <p>Haut regeneriert 3–6 Wochen unter der Oberfläche.</p>
 
     <h3>2.8 Langzeitpflege</h3>
-    <p>Feuchtigkeit + UV-Schutz = scharfe Linien & kräftige Farben.</p>
+    <p>Feuchtigkeit + UV-Schutz = scharfe Linien, kräftige Farben.</p>
 
     <a class="cta-btn" href="kontakt.html">Bei Fragen – wir helfen!</a>
 
   </div>
-<br>
-<br>
+
   <!-- BACK TO TOP -->
   <div id="backToTop" onclick="scrollTopSmooth()">↑</div>
 
   <!-- FOOTER -->
   <footer>
-    © 2025 Milane Tattoo Studio – Büsserach | Designed with ❤️ by c3ntum | <a href="impressum.html">Impressum</a> | <a href="haftung.html">Haftung</a> | <a href="agb.html">AGB</a> | <a href="datenschutz.html">Datenschutz</a>
-  
-    <p style="font-size: 12px; color: #777; margin-top: 20px;">
-  Alle auf dieser Website verwendeten Bilder, Tattoos und künstlerischen Arbeiten unterliegen dem Urheberrecht des jeweiligen Künstlers. 
-  Eine Nutzung, Vervielfältigung oder Weiterverwendung ist ohne schriftliche Zustimmung des Künstlers nicht gestattet. 
-  © Milane Tattoo Studio – alle Rechte vorbehalten.
-</p>
+    © 2025 Milane Tattoo Studio – Büsserach |  
+    <a href="impressum.html">Impressum</a> |  
+    <a href="haftung.html">Haftung</a> |  
+    <a href="agb.html">AGB</a> |  
+    <a href="datenschutz.html">Datenschutz</a>
   </footer>
 
 </body>
