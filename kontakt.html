@@ -45,6 +45,45 @@
       h2 { font-size: 2rem; }
     }
 
+      /* HEADER */
+    header {
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      padding: 16px;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: #c40000;
+      text-decoration: none;
+    }
+
+    .menu-toggle {
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      background: #111;
+      padding: 16px;
+      border-top: 1px solid #222;
+    }
+
+    .mobile-menu a {
+      display: block;
+      color: #ccc;
+      padding: 8px 0;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
     /* HERO AREA */
     .hero {
       position: relative;
@@ -177,9 +216,39 @@
       color: var(--text-muted);
     }
   </style>
+
+    <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('backToTop');
+      btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    });
+
+    function scrollTopSmooth() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  
 </head>
 
 <body>
+      <!-- HEADER -->
+  <header class="d-flex justify-content-between align-items-center">
+    <a class="logo" href="index.html">MILANE STUDIO</a>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="tattoo.html">Tattoo Galerie</a>
+    <a href="pflege.html">Pflege & Anleitung</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
 
 <!-- HERO -->
 <section class="hero">
