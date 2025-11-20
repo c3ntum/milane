@@ -37,6 +37,42 @@ https://www.blackheart.ch/tattoo-preise-zuerich
 
 __________________________________________________
 
+***DNS EINTRàGE ****
+
+$TTL 3600
+@               IN SOA  ns11.infomaniak.ch. hostmaster.infomaniak.ch. (2025110610 10800 3600 605800 3600)
+                3600 IN A    185.199.108.153
+                3600 IN A    185.199.109.153
+                3600 IN A    185.199.110.153
+                3600 IN A    185.199.111.153
+                3600 IN AAAA 2606:50c0:8000::153
+                3600 IN AAAA 2606:50c0:8001::153
+                3600 IN AAAA 2606:50c0:8002::153
+                3600 IN AAAA 2606:50c0:8003::153
+www             3600 IN CNAME c3ntum.github.io.
+                3600 IN MX 5 mta-gw.infomaniak.ch.
+                3600 IN TXT "v=spf1 include:spf.infomaniak.ch -all"
+_dmarc          3600 IN TXT "v=DMARC1; p=reject;"
+_domainkey      3600 IN NS   ns11.infomaniak.ch.
+_domainkey      3600 IN NS   ns12.infomaniak.ch.
+                3600 IN NS   ns11.infomaniak.ch.
+                3600 IN NS   ns12.infomaniak.ch.
+
+
+_________________________________________________
+einträge**** manuell
+
+| Typ  | Quelle | Ziel                | TTL  |
+| ---- | ------ | ------------------- | ---- |
+| A    | @      | 185.199.108.153     | 3600 |
+| A    | @      | 185.199.109.153     | 3600 |
+| A    | @      | 185.199.110.153     | 3600 |
+| A    | @      | 185.199.111.153     | 3600 |
+| AAAA | @      | 2606:50c0:8000::153 | 3600 |
+| AAAA | @      | 2606:50c0:8001::153 | 3600 |
+| AAAA | @      | 2606:50c0:8002::153 | 3600 |
+| AAAA | @      | 2606:50c0:8003::153 | 3600 |
+_________________________________________________
 
 
 
