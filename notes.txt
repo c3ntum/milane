@@ -74,5 +74,5 @@ einträge**** manuell
 | AAAA | @      | 2606:50c0:8003::153 | 3600 |
 _________________________________________________
 
-
+in githup rpository datei ohne endung mit /C/N/A/M/E -> inhalt mi/lan/e.ch
 
