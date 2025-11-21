@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://c3ntum.github.io/milane/sitemap.xml
