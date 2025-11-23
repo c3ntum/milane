@@ -3,6 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+  /* Intro Text */
+  .about-intro {
+    max-width: 980px;
+    margin: 0 auto 40px auto;
+    padding: 0 26px;
+    text-align: left;
+  }
+
+  .about-intro h1 {
+    font-family: 'Germania One', serif;
+    font-size: 3rem;
+    color: #c40000;
+    text-shadow: 0 0 12px rgba(196,0,0,0.6);
+    margin-bottom: 15px;
+  }
+
+  .about-intro p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.7;
+  }
+
+  /* Person Cards */
+  .person-card {
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  .person-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid rgba(196,0,0,0.7);
+    box-shadow: 0 0 25px rgba(196, 0, 0, 0.5);
+  }
+
+  .person-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.9rem;
+    color: #c40000;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 8px rgba(196, 0, 0, 0.6);
+  }
+
+  .person-role {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 15px;
+    font-style: italic;
+  }
+</style>
 </head>
 
 <body>
@@ -19,17 +75,53 @@
 
   <!-- CONTENT -->
 <main>
-<!-- Hinter unserem Studio stehen zwei Menschen, die mit Leidenschaft führen — nicht tätowieren. ✨  Wir sind das organisatorische Herz, die Struktur, die Vision und die Menschen, die dafür sorgen, dass unsere Künstler*innen die besten Bedingungen haben, um wahre Kunst zu schaffen.
 
-Vertretungsberechtigte Person:
-Piero Esteriore
+  <!-- INTRO TEXT (kein Card) -->
+  <section class="about-intro">
+    <h1>Über uns</h1>
+    <p>
+      Hinter dem <strong>Milane Tattoo Studio</strong> stehen zwei Menschen, die gemeinsam dafür sorgen,
+      dass unser Studio in Büsserach professionell, herzlich und perfekt organisiert läuft.
+      Wir selbst <strong>tätowieren nicht</strong> – wir führen, strukturieren, beraten und schaffen ein Umfeld,
+      in dem unsere Artists die besten Bedingungen haben, um echte Kunst zu erschaffen.
+    </p>
+  </section>
 
-Geschäftsführerin & Studioleitung:
-Alessia Milane Weiss
+  <div class="container-box">
 
-Wir selbst tätowieren nicht, sondern führen das Studio, betreuen euch, planen, organisieren und schaffen eine Atmosphäre, in der sich sowohl Artists als auch Kund*innen wohlfühlen. 🤍
-  -->
-  
+    <!-- PERSON 1 – PIERO -->
+    <div class="x-card person-card">
+      <img src="piero.png" alt="Piero Esteriore" class="person-image">
+
+      <div class="person-title">Piero Esteriore</div>
+      <p class="person-role">Vertretungsberechtigte Person · Studio Management</p>
+
+      <p>
+        Piero ist europaweit bekannt als Teil der <strong>Esteriore Brothers</strong>.
+        Sein Auge für Ästhetik, seine ruhige Art und seine Erfahrung als Künstler machen ihn zum
+        strukturierten, professionellen Kopf des Studios.
+        Er sorgt dafür, dass Abläufe stimmen, Kund*innen sich wohlfühlen und das Studio höchste Standards erfüllt.
+      </p>
+    </div>
+
+    <!-- PERSON 2 – ALESSIA -->
+    <div class="x-card person-card">
+      <img src="alessia.png" alt="Alessia Milane Weiss" class="person-image">
+
+      <div class="person-title">Alessia Milane Weiss</div>
+      <p class="person-role">Geschäftsführerin · Studioleitung</p>
+
+      <p>
+        Alessia ist die organisatorische Seele des Studios.
+        Sie kümmert sich um Termine, Kundenbetreuung, Hygiene, Abläufe und die gesamte tägliche Organisation.
+        Mit ihrem Feingefühl, ihrer Herzlichkeit und ihrem Blick fürs Detail sorgt sie für eine Atmosphäre,
+        in der sich sowohl Kund*innen als auch Artists jederzeit wohlfühlen.
+      </p>
+    </div>
+
+
+  </div>
+
 </main>
   <!-- Footer -->
  <div id="footer"></div>
@@ -40,6 +132,7 @@ Wir selbst tätowieren nicht, sondern führen das Studio, betreuen euch, planen,
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
