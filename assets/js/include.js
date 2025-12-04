@@ -1,8 +1,8 @@
 async function loadPartials() {
      // SEO in <head> einfügen
-    const head = document.querySelector("head");
-    const seoRes = await fetch("/partials/seo.html");
-    head.insertAdjacentHTML("beforeend", await seoRes.text());
+   // const head = document.querySelector("head");
+  //  const seoRes = await fetch("/partials/seo.html");
+  //  head.insertAdjacentHTML("beforeend", await seoRes.text());
     
     // Header einfügen
     const header = document.getElementById("header");
@@ -20,3 +20,4 @@ async function loadPartials() {
 }
 
 document.addEventListener("DOMContentLoaded", loadPartials);
+
