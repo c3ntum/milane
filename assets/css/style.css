@@ -3,11 +3,7 @@ html, body {
   height: 100%;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+
 
 /* Der Inhaltsbereich muss wachsen */
 main {
@@ -30,6 +26,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Glow for titles */
@@ -439,3 +438,4 @@ h2 {
   background: #fff;
   color: #000;
 }
+
